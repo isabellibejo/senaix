@@ -3,6 +3,7 @@ import {
   Text,
   TextInput,
   View,
+  StatusBar,
   StyleSheet,
   TouchableOpacity,
 } from "react-native";
@@ -19,27 +20,30 @@ export default function SignIn() {
       </TouchableOpacity>
       <View>
         <Text style={style.title}>Estamos quase lá.</Text>
-        <Text style={style.subtitle}>Faça seu login para começar a utilizar o app.</Text>
+        <Text style={style.subtitle}>
+          Faça seu login para começar a utilizar o app.
+        </Text>
       </View>
       <View style={{ gap: 16 }}>
         <View style={style.inputBox}>
           <Feather name="mail" size={24} color="#8a8787" />
-          <TextInput style={style.input} placeholder="Digite seu e-mail"
+          <TextInput
+            style={style.input}
+            placeholder="Digite seu email"
             placeholderTextColor="#8a8787"
             keyboardType="email-address"
           />
-
         </View>
         <View style={style.inputBox}>
           <Feather name="lock" size={24} color="#8a8787" />
-          <TextInput style={style.input} placeholder="Digite sua senha"
+          <TextInput
+            style={style.input}
+            placeholder="Digite sua senha"
             placeholderTextColor="#8a8787"
             secureTextEntry
           />
-
         </View>
         <MyButton text="Login" style={{ width: "100%" }} />
-
       </View>
     </View>
   );
