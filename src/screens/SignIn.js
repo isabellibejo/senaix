@@ -21,19 +21,20 @@ export default function SignIn() {
 
   async function handleSubmit() {
     try {
-      setError("")
-      await signIn({ email, password })
-    }
-    catch (error) {
-      if (error.response && error.response.data && error.response.data.message) {
+      setError("");
+      await signIn({ email, password });
+    } catch (error) {
+      if (
+        error.response &&
+        error.response.data &&
+        error.response.data.message
+      ) {
         setError(error.response.data.message);
-      }
-      else {
-        setError("Falha no login. Verifique sua credenciais.");
+      } else {
+        setError("Falha no login. Verifique suas credenciais.");
       }
     }
   }
-
 
   return (
     <View style={style.container}>
@@ -70,7 +71,11 @@ export default function SignIn() {
           />
         </View>
         {error && <Text>{error}</Text>}
-        <MyButton onPress={handleSubmit} text="Login" style={{ width: "100%" }} />
+        <MyButton
+          onPress={handleSubmit}
+          text="Login"
+          style={{ width: "100%" }}
+        />
       </View>
     </View>
   );
